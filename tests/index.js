@@ -1,15 +1,22 @@
 "use strict";
 
-var rule = require("../lib/index"),
-    RuleTester = require("eslint").RuleTester;
+var assert = require("assert");
+var CLIEngine = require("eslint").CLIEngine;
 
-var ruleTester = new RuleTester();
-ruleTester.run("index", rule, {
-    valid: [
-        "var appHost = #{String $ appHost $ compileTimeAppSettings}",
-        "var homeR   = @{HomeR}"
-    ],
-
-    invalid: [
-    ]
+var cli = new CLIEngine({
+    extensions: ["julius"],
+    useEslintrc: false
 });
+
+var index = require("../lib/index.js");
+cli.addPlugin("eslint-plugin-julius", index);
+
+function cliReport(code, filename) {
+    it(code, function() {
+        var report = cli.executeOnText(code, filename);
+        assert.equal(report.errorCount, 0, JSON.stringify(report, null, 4));
+    });
+}
+
+cliReport("var appHost = #{String $ appHost $ compileTimeAppSettings}", "appHost.julius");
+cliReport("var homeR = @{HomeR}", "homeR.julius");
