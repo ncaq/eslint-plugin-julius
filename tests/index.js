@@ -20,3 +20,10 @@ function cliReport(code, filename) {
 
 cliReport("var appHost = #{String $ appHost $ compileTimeAppSettings}", "appHost.julius");
 cliReport("var homeR = @{HomeR}", "homeR.julius");
+cliReport(
+    `
+    var a = #{String a};
+    var b = #{String b};
+    var c = #{String c};
+    `
+    , "multi-line.julius");
