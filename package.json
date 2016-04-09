@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-julius",
+  "version": "0.0.0",
+  "description": "yesod shakespeare julius rulus for ESLint",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "ncaq <ncaq@ncaq.net>",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "~1.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
