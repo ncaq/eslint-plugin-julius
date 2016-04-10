@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-julius",
   "version": "0.0.0",
-  "description": "yesod shakespeare julius rulus for ESLint",
+  "description": "yesod shakespeare julius plugin for ESLint",
   "keywords": [
     "eslint",
     "eslintplugin",
